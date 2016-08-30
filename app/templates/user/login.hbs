@@ -9,6 +9,9 @@
             <label class="control-label">Password</label>
             {{bs-input type="password"}}
          {{/bs-form-group}}
+         <hr />
+         <button class="btn btn-block btn-danger" {{action "loginWithSocialMedia" "google"}}>Login with Google</button>
+         <hr />
         </div>
         <div class="panel-footer clearfix">
           {{bs-button defaultText="LogIn" type="primary" buttonType="submit" class="pull-right"}}
