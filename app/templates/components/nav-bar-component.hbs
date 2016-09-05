@@ -10,8 +10,11 @@
   </div>
   {{#bs-navbar-content}}
     {{#bs-navbar-nav class="navbar-right"}}
-      {{#bs-nav-item}}{{#link-to "user.login"}}Login{{/link-to}}{{/bs-nav-item}}
-      {{#bs-nav-item}}{{#link-to}}Signup{{/link-to}}{{/bs-nav-item}}
+      {{#if session.isAuthenticated}}
+        {{#bs-nav-item}}{{#link-to "user.login"}}Logout ({{session.currentUser.displayName}}){{/link-to}}{{/bs-nav-item}}
+      {{else}}
+        {{#bs-nav-item}}{{#link-to "user.login"}}Login{{/link-to}}{{/bs-nav-item}}
+      {{/if}}
     {{/bs-navbar-nav}}
   {{/bs-navbar-content}}
 {{/bs-navbar}}
